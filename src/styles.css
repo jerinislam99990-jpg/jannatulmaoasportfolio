@@ -1,0 +1,332 @@
+@import 'tailwindcss' source('../');
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply m-0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:root {
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Bricolage Grotesque', 'Manrope', ui-sans-serif, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --content-width: 80rem;
+  --reading-width: 42rem;
+  --background: #f4efe6;
+  --foreground: #16130f;
+  --card: #fbf8f2;
+  --card-foreground: #16130f;
+  --popover: #fbf8f2;
+  --popover-foreground: #16130f;
+  --primary: #16130f;
+  --primary-foreground: #f4efe6;
+  --secondary: #e9e1d3;
+  --secondary-foreground: #16130f;
+  --muted: #e9e1d3;
+  --muted-foreground: #5f574c;
+  --accent: #e2366f;
+  --accent-foreground: #fff8f2;
+  --cobalt: #2340e8;
+  --saffron: #f2a93b;
+  --destructive: #c62828;
+  --destructive-foreground: #fff;
+  --border: #d9cfbf;
+  --input: #d9cfbf;
+  --ring: #e2366f;
+  --chart-1: #e2366f;
+  --chart-2: #2340e8;
+  --chart-3: #f2a93b;
+  --chart-4: #14a37f;
+  --chart-5: #16130f;
+  --radius: 1rem;
+  --sidebar: #f4efe6;
+  --sidebar-foreground: #16130f;
+  --sidebar-primary: #16130f;
+  --sidebar-primary-foreground: #f4efe6;
+  --sidebar-accent: #e9e1d3;
+  --sidebar-accent-foreground: #16130f;
+  --sidebar-border: #d9cfbf;
+  --sidebar-ring: #e2366f;
+}
+
+.dark {
+  --background: #121010;
+  --foreground: #f4efe6;
+  --card: #1c1917;
+  --card-foreground: #f4efe6;
+  --popover: #1c1917;
+  --popover-foreground: #f4efe6;
+  --primary: #f4efe6;
+  --primary-foreground: #121010;
+  --secondary: #27221e;
+  --secondary-foreground: #f4efe6;
+  --muted: #27221e;
+  --muted-foreground: #b3a999;
+  --accent: #ff4f87;
+  --accent-foreground: #121010;
+  --cobalt: #6d84ff;
+  --saffron: #f7bb55;
+  --destructive: #ef5350;
+  --destructive-foreground: #121010;
+  --border: #3a332d;
+  --input: #3a332d;
+  --ring: #ff4f87;
+  --chart-1: #ff4f87;
+  --chart-2: #6d84ff;
+  --chart-3: #f7bb55;
+  --chart-4: #34c99c;
+  --chart-5: #f4efe6;
+  --sidebar: #121010;
+  --sidebar-foreground: #f4efe6;
+  --sidebar-primary: #f4efe6;
+  --sidebar-primary-foreground: #121010;
+  --sidebar-accent: #27221e;
+  --sidebar-accent-foreground: #f4efe6;
+  --sidebar-border: #3a332d;
+  --sidebar-ring: #ff4f87;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --color-cobalt: var(--cobalt);
+  --color-saffron: var(--saffron);
+  --container-content: var(--content-width);
+  --container-reading: var(--reading-width);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Portfolio-wide craft                                                */
+/* ------------------------------------------------------------------ */
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+body {
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-heading);
+  font-optical-sizing: auto;
+  letter-spacing: -0.035em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Paper grain over everything */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+
+.dark .grain {
+  opacity: 0.09;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Outline display text */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
+.text-outline-fg {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--foreground);
+}
+
+/* The sketch, used as a mask so it can be filled with any ink */
+.ink-sketch {
+  -webkit-mask-image: url('/img/hero-ink.png');
+  mask-image: url('/img/hero-ink.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+}
+
+.ink-flow {
+  background: linear-gradient(
+    115deg,
+    var(--foreground) 0%,
+    var(--foreground) 38%,
+    var(--accent) 48%,
+    var(--cobalt) 56%,
+    var(--foreground) 66%,
+    var(--foreground) 100%
+  );
+  background-size: 300% 100%;
+  animation: ink-flow 7s ease-in-out infinite;
+}
+
+@keyframes ink-flow {
+  0% { background-position: 100% 0; }
+  55% { background-position: 0% 0; }
+  100% { background-position: 0% 0; }
+}
+
+/* Marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-speed, 40s) linear infinite;
+}
+
+.marquee[data-reverse='true'] {
+  animation-direction: reverse;
+}
+
+.marquee-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* Slow spin for stamps and badges */
+.spin-slow {
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Gradient blobs */
+.blob {
+  filter: blur(60px);
+  opacity: 0.55;
+  border-radius: 9999px;
+  animation: blob 16s ease-in-out infinite alternate;
+}
+
+@keyframes blob {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(8%, -6%) scale(1.12); }
+  100% { transform: translate(-6%, 8%) scale(0.94); }
+}
+
+/* Custom cursor only on fine pointers */
+@media (pointer: fine) {
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button {
+    cursor: none;
+  }
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.35s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .marquee,
+  .spin-slow,
+  .blob,
+  .ink-flow {
+    animation: none !important;
+  }
+}
